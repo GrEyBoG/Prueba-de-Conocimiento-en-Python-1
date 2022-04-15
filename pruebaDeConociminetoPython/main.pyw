@@ -21,7 +21,7 @@ orange = '#fb8500'
 
 ##VENTANA##
 root = Tk()
-root.title("Cubicaje")
+root.title("Prueba De Conocimiento Python")
 root.geometry("1090x750")
 root.resizable(width=False, height=False)
 imgBackground = PhotoImage(file="pruebaDeConociminetoPython\imgs\mainBackground.png")
