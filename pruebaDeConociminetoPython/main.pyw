@@ -24,7 +24,7 @@ root = Tk()
 root.title("Cubicaje")
 root.geometry("1090x750")
 root.resizable(width=False, height=False)
-imgBackground = PhotoImage(file="problemas\imgs\mainBackground.png")
+imgBackground = PhotoImage(file="pruebaDeConociminetoPython\imgs\mainBackground.png")
 mainBackground = Label(root, image=imgBackground).place(x=-100, y=-100)
 
 # Footer
