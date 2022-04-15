@@ -284,7 +284,8 @@ def showTest2():
             age INTEGER(3),
             email TEXT(25) UNIQUE)''')
         conn.commit()
-
+        
+    createTable()
 
     # Eliminar Tabla
 
@@ -322,8 +323,7 @@ def showTest2():
         def searchUserById(self, id):
             quest = c.execute("SELECT * FROM users WHERE id=?", (id,))
             return quest.fetchone()
-           
-    createTable()
+          
      
     # User manager
     um = USER()
