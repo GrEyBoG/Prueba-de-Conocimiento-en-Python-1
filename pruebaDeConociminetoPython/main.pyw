@@ -284,7 +284,6 @@ def showTest2():
             age INTEGER(3),
             email TEXT(25) UNIQUE)''')
         conn.commit()
-        
     createTable()
 
     # Eliminar Tabla
@@ -323,7 +322,8 @@ def showTest2():
         def searchUserById(self, id):
             quest = c.execute("SELECT * FROM users WHERE id=?", (id,))
             return quest.fetchone()
-          
+           
+    
      
     # User manager
     um = USER()
@@ -461,7 +461,6 @@ def showTest2():
 
         # Funcion de volver
         def filterUserBack():
-            global containersActionButton
             filterFrame.pack_forget()
             showTest2()
             test1.config(state=NORMAL, bg=black)
@@ -503,7 +502,7 @@ def showTest2():
 
         # Boton de agregar
         addUserButton = Button(buttonsFrame,
-                            text="A  G  R  E  G  A  R",
+                            text="A D D",
                             font=('Segoe UI', 10),
                             foreground='white',
                             activeforeground='white',
@@ -520,7 +519,7 @@ def showTest2():
     
     # Boton de filtrar
     filterButton = Button(buttonsFrame,
-                          text="F I L T R A R",
+                          text="F I L T E R",
                           font=('Segoe UI', 10),
                           foreground='white',
                           activeforeground='white',
@@ -635,7 +634,6 @@ def showTest2():
 
         # Funcion de volver
         def addUserBack():
-            global containersActionButton
             addUserFrame.pack_forget()
             showTest2()
             test1.config(state=NORMAL, bg=black)
@@ -685,7 +683,7 @@ def showTest2():
 
     # Boton de agregar
     addUserButton = Button(buttonsFrame,
-                           text="A  G  R  E  G  A  R",
+                           text="A D D",
                            font=('Segoe UI', 10),
                            foreground='white',
                            activeforeground='white',
@@ -720,7 +718,7 @@ def showTest2():
 
     # Boton de eliminar
     deleteButton = Button(buttonsFrame,
-                          text="E L I M I N A R",
+                          text="D E L E T E",
                           font=('Segoe UI', 10),
                           foreground='white',
                           activeforeground='white',
@@ -756,30 +754,30 @@ def showTest2():
             editUserFrame.pack(padx=100, pady=157)
 
             # Header
-            headerEditContainers = Frame(editUserFrame,
+            headerEditUser = Frame(editUserFrame,
                                          height=35,
                                          width=700,
                                          background=black)
-            headerEditContainers.grid(
+            headerEditUser.grid(
                 row=0, column=0, columnspan=6, sticky=W+E)
-            headerText = Label(headerEditContainers,
-                               text='U S U A R I O  %s' % table.item(table.focus())[
+            headerText = Label(headerEditUser,
+                               text='U S E R  %s' % table.item(table.focus())[
                                    "values"][0],
                                bg=black,
                                fg='white',
                                font=('Segoe UI', 10)).pack(side=TOP, pady=7)
 
             # footer
-            footerEditContainers = Frame(editUserFrame,
+            footerEditUser = Frame(editUserFrame,
                                          height=45,
                                          width=700,
                                          background=black)
-            footerEditContainers.grid(
+            footerEditUser.grid(
                 row=14, column=0, columnspan=6, sticky=W+E)
 
             # Texto
             nameLabel = Label(editUserFrame,
-                              text="N O M B R E",
+                              text="N A M E",
                               font=('Segoe UI', 10),
                               foreground='white',
                               background=darkGrey).grid(row=1, column=0, pady=10, padx=40)
@@ -841,7 +839,7 @@ def showTest2():
                                justify=CENTER).grid(row=4, column=1, pady=10, padx=40)
             # Funcion de regresar
 
-            def editContainerBack():
+            def editUserBack():
                 global showTest2
                 editUserFrame.pack_forget()
                 test1.config(state=NORMAL, bg=black)
@@ -855,14 +853,14 @@ def showTest2():
                 ), emailVar.get(), table.item(table.focus())["values"][0])]
                 um.editUser(updatedUser)
                 conn.commit()
-                editContainerBack()
+                editUserBack()
 
             # Boton de regresar
-            backEditUserButton = Button(footerEditContainers,
-                                        text="A  T  R  A  S",
+            backEditUserButton = Button(footerEditUser,
+                                        text="B A C K",
                                         height=2,
                                         width=20,
-                                        command=editContainerBack,
+                                        command=editUserBack,
                                         bg=black,
                                         activebackground=darkGrey,
                                         fg='white',
@@ -870,8 +868,8 @@ def showTest2():
                                         font=('Segoe UI', 10),
                                         relief='flat',
                                         borderwidth=0).pack(side=LEFT)
-            editUserButton = Button(footerEditContainers,
-                                    text='E D I T A R',
+            editUserButton = Button(footerEditUser,
+                                    text='E D I T',
                                     height=2,
                                     width=25,
                                     command=edit,
@@ -885,7 +883,7 @@ def showTest2():
 
     # Boton de editar
     editButton = Button(buttonsFrame,
-                        text="E D I T A R",
+                        text="E D I T",
                         font=('Segoe UI', 10),
                         foreground='white',
                         activeforeground='white',
@@ -1037,3 +1035,4 @@ def clean():
 
 
 root.mainloop()
+
