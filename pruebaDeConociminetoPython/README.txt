@@ -1,4 +1,4 @@
-Execute the file 'main' to be able to visualize the program
+Execute the file 'main' to be able to visualize the program (Python 3.10.2)
 
 1. ¿Ha trabajado con frameworks como: Fast API, Flask o Tornado?
     - He trabajado flask con python
