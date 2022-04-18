@@ -56,7 +56,7 @@ def showTest1():
         global timer
         timerLabel.config(text='T I M E  T O  R E S E T :   %ss' % timer)
         timer -= 1
-        if timer == 0:
+        if timer <= 0:
             timer = 60
             setTableValues()
         timerLabel.after(1000, updateTimer)
